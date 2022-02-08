@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import reactDom from 'react-dom';
 import {
     BrowserRouter as Router,
@@ -12,10 +12,24 @@ import About from './pages/About/About';
 import Works from './pages/Works/Works';
 import './styles/index.scss';
 import DarkMode from './components/DarkMode/DarkMode';
+
+
 const App = () => {
 
-    const [darkMode, setDarkMode] = useState(false)
     
+    
+    if(localStorage.getItem('saveValueDarkMode') === null){
+        localStorage.setItem('saveValueDarkMode', 'false')
+    }
+    
+    let statusBooleanDarkMode = localStorage.getItem('saveValueDarkMode') === 'false' ? false : true;
+    const [darkMode, setDarkMode] = useState(statusBooleanDarkMode)
+
+    useEffect(() => {
+        localStorage.setItem('saveValueDarkMode', darkMode);
+    }, [darkMode])
+
+
     return (
         <div className={darkMode ? 'page-container dark-mode' : ' page-container light-mode'}>
             <Router>

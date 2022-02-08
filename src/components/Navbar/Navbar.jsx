@@ -2,9 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import DarkMode from '../DarkMode/DarkMode';
 
-const Navbar = () => {
+const Navbar = (props) => {
     const nightMode = useContext(DarkMode)
-
 
     return (
             <div className='navbar'>
