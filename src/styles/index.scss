@@ -43,6 +43,18 @@ img {
   & a{
     color: black;
   }
+
+  & .slider:after{
+    background-color: $color-dark-mode;
+  }
+
+  & button{
+    color: black;
+  }
+
+  & .card{
+    background-color: transparent;
+  }
 }
 
 .dark-mode{

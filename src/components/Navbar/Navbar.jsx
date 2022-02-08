@@ -7,7 +7,9 @@ const Navbar = (props) => {
  
     return (
             <div className='navbar'>
+                <a href="/">
                 <h1 className='title-nav'><span>Web</span> Agency</h1>
+                </a>
                 <Link className='link-nav first after' to='/'>Home</Link>
                 <Link className='link-nav first after' to='/pages/about'>About</Link>
                 <Link className='link-nav first after' to='/pages/works' >Works</Link>

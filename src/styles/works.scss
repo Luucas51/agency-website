@@ -8,18 +8,45 @@ $main-color: #23abd4;
     flex-direction: column;
     align-items: center;
     font-family: $roboto-font;
+    gap: 50px;
     padding: 20px;
 }
 
 .our-project{
     font-size: 40px;
+    border-bottom: solid 5px $main-color;
+}
 
-    &::before{
-        content: "";
-        bottom: 805px;
-        position: absolute;
-        height:5px;
-        width: 65px;
-        background-color: $main-color;
+.card{
+    border: solid 2px $main-color;
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    justify-content: center;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    gap: 10px;
+
+    & button{
+        border: solid 2px $main-color;
+        background-color: transparent;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+
+        &:hover{
+            background-color: $main-color;
+        }
     }
+
 }
