@@ -1,0 +1,183 @@
+$color-dark-mode:#121212;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+$main-color: #23abd4;
+
+.page-container{
+  width: 100vw;
+  height: 100vh;
+}
+
+/* CSS reset. */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+// 100VH height & 100vw width
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Dark / Light Mode
+
+.light-mode{
+  background-color: white;
+  color: black;
+
+  & a{
+    color: black;
+  }
+}
+
+.dark-mode{
+  background-color: black;
+  color: white;
+
+  & a{
+    color: white;
+  }
+
+  & input:checked + .slider{
+    background-color: white;
+  }
+
+  &   .slider:before {
+    background-color: $color-dark-mode;
+  }
+
+}
+
+
+
+// Content Page
+
+.content-page{
+  display: flex;
+}
+
+
+
+// Btn toggle darkmode
+
+.slider.round {
+    border-radius: 34px;
+  }
+  
+.slider.round:before {
+border-radius: 50%;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: $color-dark-mode;
+  }
+  
+  input:focus + .slider {
+      box-shadow: 0 0 1px $color-dark-mode;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+
+
+  // Navbar link
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+}
+
+    
+
+a,a:visited,a:hover,a:active{
+    -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+    position:relative;
+    transition:0.5s color ease;
+    text-decoration:none;
+    font-size:20px;
+  }
+  a:hover{
+    color:$main-color;
+  }
+  a.before:before,a.after:after{
+    content: "";
+    transition:0.5s all ease;
+    -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+    position:absolute;
+  }
+  a.before:before{
+    top:-0.25em;
+  }
+  a.after:after{
+    bottom:-0.25em;
+  }
+  a.before:before,a.after:after{
+    height:5px;
+    height:0.35rem;
+    width:0;
+    background:$main-color;
+  }
+  a.first:after{
+    left:0;
+  }
+  a.before:hover:before,a.after:hover:after{
+    width:100%;
+  }
