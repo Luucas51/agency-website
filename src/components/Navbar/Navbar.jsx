@@ -4,9 +4,10 @@ import DarkMode from '../DarkMode/DarkMode';
 
 const Navbar = (props) => {
     const nightMode = useContext(DarkMode)
-
+ 
     return (
             <div className='navbar'>
+                <h1 className='title-nav'><span>Web</span> Agency</h1>
                 <Link className='link-nav first after' to='/'>Home</Link>
                 <Link className='link-nav first after' to='/pages/about'>About</Link>
                 <Link className='link-nav first after' to='/pages/works' >Works</Link>

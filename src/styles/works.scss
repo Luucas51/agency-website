@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200&family=Lato:wght@300&family=Montserrat:wght@500&family=Open+Sans:wght@300;500&family=Outfit:wght@100&family=Roboto:ital,wght@0,300;1,100;1,300&display=swap');
+$roboto-font: 'Roboto', sans-serif;
+$main-color: #23abd4;
+
+
+.content-page-works{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $roboto-font;
+    padding: 20px;
+}
+
+.our-project{
+    font-size: 40px;
+
+    &::before{
+        content: "";
+        bottom: 805px;
+        position: absolute;
+        height:5px;
+        width: 65px;
+        background-color: $main-color;
+    }
+}
