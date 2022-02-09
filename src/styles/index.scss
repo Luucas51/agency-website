@@ -55,6 +55,10 @@ img {
   & .card{
     background-color: transparent;
   }
+
+  & .link-project{
+    border-bottom: solid 2px $color-dark-mode;
+  }
 }
 
 .dark-mode{
@@ -210,3 +214,80 @@ a,a:visited,a:hover,a:active{
     width:100%;
   }
 
+
+.burger-menu{
+  display: none;
+}
+
+  // Media queries
+
+
+  @media screen and (max-width: 1200px) {
+    .navbar{
+      display: flex;
+      flex-direction: column;
+    }
+    .burger-menu{
+      display: flex;
+      font-size: 60px;
+      cursor: pointer;
+      position: absolute;
+      top: center;
+      right: 0;
+    }
+
+    .link-nav{
+      display: none;
+    }
+
+    .switch{
+      display: none;
+    }
+
+    .burger-menu-div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      margin-top: 30px;
+      gap: 20px;
+
+      & a{
+        animation: fadein 3s linear forwards;
+        -webkit-animation: fadein 3s linear forwards;
+}
+    }
+
+    @keyframes fadein {
+      from{
+        opacity: 0;
+      } to {
+        opacity: 1;
+      }
+    }
+
+    .content-page-home{
+      z-index: 1;
+    }
+
+    .navbar-burger{
+      display: flex;
+      font-family: $roboto-font;
+      flex-direction: column;
+      height: 210px;
+      border-bottom: solid 2px white;
+      transition: height 1s;
+      -webkit-transition: height 1s;
+      -moz-transition: height 1s;
+      -ms-transition: height 1s;
+      -o-transition: height 1s;
+}
+    
+    .title-head{
+      width: 300px;
+      display: flex;
+      justify-content: center;
+    }
+    
+
+  }

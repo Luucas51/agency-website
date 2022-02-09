@@ -12,6 +12,7 @@ import About from './pages/About/About';
 import Works from './pages/Works/Works';
 import './styles/index.scss';
 import DarkMode from './components/DarkMode/DarkMode';
+import StudyCase from './components/StudyCase/StudyCase';
 
 
 const App = () => {
@@ -39,10 +40,13 @@ const App = () => {
                 }}>
 
                 <Navbar/>
+                
                 <Routes>
                     <Route path='/' element={<Home/>} />
                     <Route path='/pages/about' element={<About/>} />
-                    <Route path='/pages/works' element={<Works/>} />
+                    <Route path='/pages/works' element={<Works/>}>
+                        <Route path='/pages/works/:company' element={<StudyCase/>} />
+                    </Route>
                 </Routes>
                 </DarkMode.Provider>
             </Router>
